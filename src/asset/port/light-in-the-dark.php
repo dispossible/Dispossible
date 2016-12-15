@@ -1,0 +1,1 @@
+<img src="/asset/port/light-in-the-dark.png" alt="A composite of photographs showing a girl aproaching a light from dark fog"/>

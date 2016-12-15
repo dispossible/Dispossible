@@ -1,0 +1,129 @@
+.portBody{
+    iframe {
+        width: 100%;
+        min-height: 200px;
+        height: 300px;
+        height: 80vh;
+        border: 1px solid $colorDark;
+        resize: vertical;
+        @media (min-width: $mediaMed){
+            height: 500px;
+            height: 80vh;
+        }
+    }
+    &.portBodyVideo iframe {
+        border: 0;
+        resize: none;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.portfolioList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    li {
+        padding: 10px;
+        display: inline-block;
+        flex-grow: 1;
+        width: 100%;
+        @media (min-width: $mediaSml){
+            width: 50%;
+        }
+        @media (min-width: $mediaMed){
+            width: 33%;
+        }
+    }
+    a {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        border: 2px solid $colorDark;
+        padding: 20px;
+        color: #fff;
+        text-decoration: none;
+        text-align: left;
+        background: $colorDark;
+        height: 200px;
+        &:after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 0 auto 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 0.5;
+        }
+        &:before {
+            display: block;
+            padding-bottom: 10px;
+            margin: 0 60px 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            font-weight: bold;
+            content: attr(data-category);
+            transition: 100ms ease-in-out;
+        }
+        &:hover {
+            &:before {
+                border-bottom-width: 3px;
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .catCSS {
+        &:after {
+            background: {
+                position: center center;
+                image: url("/asset/svg/html5-styling.svg");
+                repeat: no-repeat;
+                size: 80% 80%;
+            }
+        }
+    }
+    .catJavaScript {
+        &:after {
+            background: {
+                position: center center;
+                image: url("/asset/svg/js.svg");
+                repeat: no-repeat;
+                size: 100% 100%;
+            }
+        }
+    }
+    .catVideo {
+        &:after {
+            background: {
+                position: center center;
+                image: url("/asset/svg/video.svg");
+                repeat: no-repeat;
+                size: 100% 100%;
+            }
+        }
+    }
+    .catImage {
+        &:after {
+            background: {
+                position: center center;
+                image: url("/asset/svg/flower.svg");
+                repeat: no-repeat;
+                size: 100% 100%;
+            }
+        }
+    }
+    .catWebsite {
+        &:after {
+            background: {
+                position: center center;
+                image: url("/asset/svg/page.svg");
+                repeat: no-repeat;
+                size: 100% 100%;
+            }
+        }
+    }
+}

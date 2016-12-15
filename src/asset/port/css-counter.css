@@ -1,0 +1,29 @@
+.counter{
+    counter-reset: a, b, c, d;
+    font-size: 0;
+}
+.counter span{
+    display: inline-block;
+    padding: 4px;
+}
+.counter .a{
+    counter-increment: a;
+    background: #a00;
+}
+.counter .b{
+    counter-increment: b;
+    background: #0a0;
+}
+.counter .c{
+    counter-increment: c;
+    background: #00a;
+}
+.counter a{
+    counter-increment: d;
+}
+.counter:after{
+    content: "Red:" counter(a) " Green:" counter(b) " Blue:" counter(c) " Total:" counter(d);
+    display: block;
+    padding-top: 20px;
+    font-size: 16px;
+}

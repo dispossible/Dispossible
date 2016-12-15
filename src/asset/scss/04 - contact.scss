@@ -1,0 +1,119 @@
+.validationMsg {
+    padding: 10px 0;
+    &.error {
+        color: #a00;
+    }
+}
+
+.form {
+    padding-bottom: 40px;
+    border-bottom: 1px solid transparentize($colorDark, 0.8);
+    margin-bottom: 40px;
+    label {
+        padding: 20px 0 10px;
+        display: block;
+        @media (min-width: $mediaMed){
+            text-align: left;
+        }
+    }
+    input,
+    textarea {
+        width: 100%;
+        border: 1px solid $colorDark;
+        background: #fff;
+        appearance: none;
+        resize: none;
+        margin: 0;
+        outline: 0;
+        padding: 5px 20px 5px 5px;
+        &:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px white inset;
+        }
+    }
+    .error {
+        input,
+        textarea {
+            border-color: #a00;
+        }
+    }
+    textarea {
+        height: 200px;
+    }
+    .inputHold {
+        position: relative;
+        &.active {
+            &:after {
+                position: absolute;
+                top: 0;
+                padding: 5px;
+                right: 0;
+                z-index: 1;
+                content: "\2714";
+                color: $colorGreen;
+            }
+            &.error:after {
+                content: "\2718";
+                color: #a00;
+            }
+        }
+    }
+}
+
+.pageHeading {
+    padding: 20px 0;
+    @media (min-width: $mediaMed){
+        padding: 40px 0;
+    }
+}
+
+.onlineBlock {
+    display: block;
+    padding: 20px;
+    @media (min-width: $mediaMed){
+        display: inline-block;
+        width: 33%;
+    }
+    a {
+        display: inline-block;
+        text-decoration: none;
+        &:hover{
+            .icon * {
+                fill: $colorGreen;
+                transition-duration: 100ms;
+            }
+            .contact-twitter * {
+                fill: #00aced;
+            }
+            .contact-deviantart * {
+                fill: #D0DD20;
+            }
+            .contact-youtube * {
+                fill: #bb0000;
+            }
+        }
+        h3 {
+            font-weight: normal;
+        }
+    }
+    .icon {
+        padding-bottom: 20px;
+        @media (min-width: $mediaMed){
+            width: 130px;
+            height: 130px;
+        }
+        * {
+            transition: 400ms ease-in-out;
+        }
+    }
+}
+
+.formTop {
+    @media(min-width: $mediaMed){
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        &:first-of-type{
+            padding-right: 40px;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.pageHome .page {
+    padding: 0;
+}
+
+.banner {
+    padding: 100px 0;
+    background: $colorDark*0.8 center top repeat;
+    overflow: hidden;
+    position: relative;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: $mediaSml){
+        padding: 150px 0;
+    }
+    @media (min-width: $mediaMed){
+        padding: 200px 0;
+        text-align: left;
+        min-height: calc(100vh - 75px);
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .cssvhunit.csscalc & {
+        padding: 0;
+    }
+    .no-canvas & {
+        background-image: url(/asset/img/bannerBg.png);
+    }
+}
+
+
+.bannerTitle {
+    position: relative;
+    padding: 30px 10px;
+    width: 100%;
+    color: #fff;
+    line-height: 2em;
+    background: rgba(0,0,0,.3);
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        position: relative;
+        display: inline-block;
+        padding: 0 30px 40px;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    h2 {
+        padding: 0;
+    }
+    @media (min-width: $mediaSml){
+        font-size: 1em;
+    }
+    @media (min-width: $mediaMed){
+        text-align: left;
+        align-items: flex-start;
+        padding: 50px 200px;
+        font-size: 1.5em;
+        h1 {
+            padding-left: 0;
+        }
+    }
+}
+
+.heroPage {
+    max-width: initial;
+    margin: 20px;
+    min-height: 80vh;
+    @media (min-width: $mediaMed){
+        margin: 40px;
+    }
+}

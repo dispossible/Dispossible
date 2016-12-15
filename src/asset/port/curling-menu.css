@@ -1,0 +1,52 @@
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 50px;
+}
+
+nav{
+    width: 300px;
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
+nav a{
+    background: #639;
+    padding: 10px 20px;
+    margin: 0 0 2px;
+    position: relative;
+    transition: 400ms ease-in-out;
+    cursor: pointer;
+    display: block;
+}
+nav a:before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    border-bottom-left-radius: 100%;
+    z-index: -1;
+    transition: 400ms ease-in-out;
+}
+nav a:hover{
+    margin-right: 5px;
+    box-shadow: -100px 0 100px -50px rgba(255,255,255,0.2) inset;
+}
+nav a:hover:before{
+    box-shadow: 5px 3px 5px 0 rgba(0,0,0,.5);
+}
+nav a:active{
+    margin-right: 0;
+    box-shadow: none;
+    transition: 100ms ease-in-out;
+}
+nav a:active:before{
+    box-shadow: none;
+    transition: 100ms ease-in-out;
+}

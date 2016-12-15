@@ -1,0 +1,12 @@
+.hidden {
+    display: none !important;
+}
+
+.wrap {
+    padding: 0 20px;
+    margin: auto;
+    @media (min-width: $mediaLrg){
+        padding: 0;
+        max-width: 960px;
+    }
+}
