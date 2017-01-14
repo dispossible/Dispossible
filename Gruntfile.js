@@ -136,11 +136,10 @@ module.exports = function(grunt) {
             }
         },
 
-        compass: {
+        sass: {
             build: {
-                options: {
-                    sassDir: 'build/scss/',
-                    cssDir: 'build/css/'
+                files: {
+                    "build/css/style.css": ['build/scss/style.scss']
                 }
             }
         },
@@ -150,7 +149,7 @@ module.exports = function(grunt) {
                 browsers: ['firefox >= 1','chrome >= 1','ie >= 1','ios >= 1','android >= 1','opera >= 1','> 1%']
             },
             build: {
-                src: 'build/css/*',
+                src: 'build/css/style.css',
                 dest: 'build/pcss/',
                 expand: true,
                 flatten: true
@@ -225,7 +224,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-csslint');
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-autoprefixer');
@@ -235,7 +234,7 @@ module.exports = function(grunt) {
     
     grunt.registerTask('default', ['clean:full','copy:full','javascript','css'/*,'svg'*/]);
     grunt.registerTask('javascript', ['jshint','uglify']);
-    grunt.registerTask('css', ['clean:build','concat','compass','autoprefixer'/*,'csslint'*/,'cssmin']);
+    grunt.registerTask('css', ['clean:build','concat','sass','autoprefixer'/*,'csslint'*/,'cssmin']);
     //grunt.registerTask('svg', ['svgstore']);
     
 };

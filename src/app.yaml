@@ -1,0 +1,15 @@
+runtime: php55
+api_version: 1
+
+handler:
+  url: ^/(\w+)$
+  script: index.php?pg=\1
+
+  url: ^/blog/([\w-]+)$
+  script: index.php?pg=blog&pst=\1
+
+  url: ^/portfolio/([\w-]+)$
+  script: index.php?pg=portfolio&port=\1
+
+  url: /(.*)
+  static_files: \1
