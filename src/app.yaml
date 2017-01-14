@@ -1,7 +1,7 @@
 runtime: php55
 api_version: 1
 
-handler:
+handlers:
   url: ^/(\w+)$
   script: index.php?pg=\1
 
