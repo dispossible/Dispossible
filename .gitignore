@@ -1,5 +1,4 @@
 node_modules/
-dist/
 .sass-cache/
-build/
 npm-debug.log
+bower_components/

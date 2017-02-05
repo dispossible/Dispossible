@@ -1,1 +1,0 @@
-<img src="/asset/port/rainmeter.png" alt="Several desktop widget panels"/>

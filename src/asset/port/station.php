@@ -1,1 +1,0 @@
-<img src="/asset/port/station.png" alt="3D Renders of a train station"/>

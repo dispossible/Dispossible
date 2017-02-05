@@ -1,1 +1,0 @@
-<img src="/asset/port/head.png" alt="3D Render of a human head"/>

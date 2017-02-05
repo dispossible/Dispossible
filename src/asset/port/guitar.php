@@ -1,1 +1,0 @@
-<img src="/asset/port/guitar.png" alt="3D Render of an acoustic guitar"/>

@@ -1,1 +1,0 @@
-<img src="/asset/port/blood-drops.png" alt="Red gems in a 3D render"/>
