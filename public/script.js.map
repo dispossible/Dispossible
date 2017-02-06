@@ -1,1 +1,0 @@
-{"version":3,"sources":["core.js"],"names":["google","families"],"mappings":"6BAEIA,SAAAA,MACIC,QADIA,UAAA","file":"script.js","sourcesContent":["//Load fonts\r\nWebFont.load({\r\n    google: {\r\n        families: ['Open Sans']\r\n    }\r\n});\r\n\r\n\r\n//Exposed core variable\r\nw.dsp = {};\r\n\r\n"]}
