@@ -2,22 +2,23 @@
     position: absolute;
     top: 50%;
     right: 16px;
-    margin-top: -8px;
-    width: 24px;
-    height: 16px;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
 
     &-line {
         position: absolute;
         display: inline-block;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 15%;
+        width: 70%;
         height: 2px;
         border-radius: 99px;
         background: white;
+        transition: 200ms ease;
         &1 {
-            top: 0;
+            top: 25%;
         }
         &2 {
             top: 50%;
@@ -25,7 +26,21 @@
         }
         &3 {
             top: auto;
-            bottom: 0;
+            bottom: 25%;
+        }
+
+        .is-open > & {
+            &1 {
+                transform: rotate(135deg);
+                top: calc(50% - 1px);
+            }
+            &2 {
+                opacity: 0;
+            }
+            &3 {
+                transform: rotate(-135deg);
+                bottom: calc(50% - 1px);
+            }
         }
     }
 
