@@ -7,8 +7,9 @@ const suffix = " - " + siteName;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {
+        title: siteName,
         page: 'home',
-        title: siteName
+        pageInfo: {}
     });
 });
 

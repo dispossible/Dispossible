@@ -8,8 +8,11 @@ $fontFamily: "Open Sans", Tahoma, Geneva, Helvetica, Arial, sans-serif, "GNU Uni
 $rem: 14px;
 
 
-$color-primary: #639;
-$color-accent: lighten($color-primary,30);
+$color-primary: #71E100;
+$color-primaryL: lighten($color-primary,30);
+$color-primaryD: darken($color-primary,30);
+
+$color-fill: #3d4351;
 $color-text: #444;
 $color-text_alt: #fff;
 $color-bg: #ddd;

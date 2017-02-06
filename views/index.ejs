@@ -2,9 +2,38 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title><%=title%></title>
+        <link rel="canonical" href="/<%=page%>">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <%- include("pages/"+page, {}); %>
+    <body class="l-page">
+
+        <header class="hdr">
+            <div class="logo">
+                <i class="logo-icon"></i><div class="logo-txt">Dispossible</div>
+            </div>
+            <i class="i-nav">
+                <span class="i-nav-line i-nav-line1"></span>
+                <span class="i-nav-line i-nav-line2"></span>
+                <span class="i-nav-line i-nav-line3"></span>
+            </i>
+        </header>
+
+        <nav>
+            
+        </nav>
+
+        <main class="l-pageContent">
+            <%- include("pages/"+page, pageInfo); %>
+        </main>
+
+        <footer>
+            
+        </footer>
+
+        <script defer asnyc src="lib/lodash.js"></script>
+        <script defer asnyc src="lib/webfontloader.js"></script>
+        <script defer asnyc src="script.js"></script>
     </body>
 </html>

@@ -1,0 +1,30 @@
+.logo {
+    display: inline-block;
+    color: white;
+
+    &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        background: $color-primary;
+        padding: 8px 8px 8px 10px;
+        &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            width: 16px;
+            height: 20px;
+            border: {
+                color: $color-fill;
+                style: solid;
+                width: 2px;
+                radius: 0 10px 10px 0;
+            }
+        }
+    }
+
+    &-txt {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
