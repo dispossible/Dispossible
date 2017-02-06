@@ -1,6 +1,6 @@
 {
   "name": "dispossible",
-  "version": "0.1.38",
+  "version": "0.1.56",
   "description": "My personal website",
   "main": "app.js",
   "dependencies": {
