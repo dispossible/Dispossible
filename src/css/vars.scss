@@ -4,15 +4,19 @@
 }
 
 
-$fontFamily: "Open Sans", Tahoma, Geneva, Helvetica, Arial, sans-serif, "GNU Unifont", Symbola, EversonMono, "DejaVu Sans", "Arial Unicode MS", Dingbats;
+$fontFamily: "Nunito", Tahoma, Geneva, Helvetica, Arial, sans-serif, "GNU Unifont", Symbola, EversonMono, "DejaVu Sans", "Arial Unicode MS", Dingbats;
 $rem: 14px;
 
 
-$color-primary: #71E100;
+$color-primary: #43A047;
 $color-primaryL: lighten($color-primary,30);
 $color-primaryD: darken($color-primary,30);
 
-$color-fill: #3d4351;
+$color-secondary: #99673D;
+$color-secondaryL: lighten($color-secondary,30);
+$color-secondaryD: darken($color-secondary,30);
+
+$color-fill: #23252b;
 $color-text: #444;
 $color-text_alt: #fff;
 $color-bg: #ddd;

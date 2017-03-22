@@ -1,0 +1,47 @@
+{
+    "title": "Dispossible",
+    "pages": [
+        {
+            "fileName": "index",
+            "url": "/",
+            "template": "home",
+            "title": ""
+        },
+        {
+            "fileName": "about",
+            "url": "/about",
+            "template": "about",
+            "title": "About Me"
+        },
+        {
+            "fileName": "portfolio",
+            "url": "/portfolio",
+            "template": "portfolio",
+            "title": "My Work"
+        },
+        {
+            "fileName": "contact",
+            "url": "/contact",
+            "template": "contact",
+            "title": "Contact"
+        }
+    ],
+    "nav": [
+        {
+            "url": "/",
+            "name": "Home"
+        },
+        {
+            "url": "/about",
+            "name": "About Me"
+        },
+        {
+            "url": "/portfolio",
+            "name": "My Work"
+        },
+        {
+            "url": "/contact",
+            "name": "Contact"
+        }
+    ]
+}

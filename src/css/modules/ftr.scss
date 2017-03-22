@@ -1,0 +1,12 @@
+.ftr {
+    background: $color-fill;
+    padding: 8px;
+    margin-top: 32px;
+
+    &-copy {
+        font-size: 0.8em;
+        color: rgba(white,0.3);
+        display: block;
+        text-align: center;
+    }
+}

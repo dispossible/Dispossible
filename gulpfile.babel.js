@@ -1,10 +1,10 @@
 //Vars
 var src = "src";
-var dist = "public";
+var dist = "dist";
 
 
 //imports
-import pkg from './package.json';
+import site from './sitemap.json';
 import gulp from 'gulp';
 import del from 'del';
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -29,6 +29,7 @@ gulp.task("build", ()=>
         "clean",
         "copy",
         "bower",
+        "html",
         "js",
         "images",
         "style",
@@ -40,16 +41,8 @@ gulp.task("watch", ()=>{
     gulp.watch(src+"/js/**/*.js",["js","versionPat"]);
     gulp.watch(src+"/img/**/*.{jpg,png,gif,svg}",["images","versionPat"]);
     gulp.watch(src+"/css/**/*.scss",["style","versionPat"]);
-    gulp.watch(src+"/*.html",["html","versionPat"]);
+    gulp.watch(src+"/**/*.ejs",["html","versionPat"]);
 });
-
-gulp.task("dist", ()=>
-    runSequence(
-        "zip",
-        "versionMin"
-    )
-);
-
 
 
 // Versions
@@ -57,12 +50,6 @@ gulp.task("dist", ()=>
 gulp.task("versionPat", ()=>{
     gulp.src("package.json")
         .pipe($.bump({type:"patch"}))
-        .pipe(gulp.dest("./"))
-});
-
-gulp.task("versionMin", ()=>{
-    gulp.src("package.json")
-        .pipe($.bump({type:'minor'}))
         .pipe(gulp.dest("./"))
 });
 
@@ -83,7 +70,7 @@ gulp.task("copy", ()=>
         .src(
             [
                 src + "/*.*",
-                "!" + src + "/*.html"
+                "!" + src + "/*.ejs"
             ],
             {dot: true}
         )
@@ -96,22 +83,6 @@ gulp.task("size", ()=>
         .src(dist+"/**/*")
         .pipe($.size({title: "public files"}))
 );
-
-gulp.task("zip", ()=>{
-    gulp
-        .src([
-            ".ebextentions/**",
-            "public/**",
-            "routes/**",
-            "views/**",
-            "app.js",
-            "app_config.json",
-            "package.json"
-        ])
-        .pipe($.zip(pkg.name+"."+pkg.version+".zip"))
-        .pipe(gulp.dest("dist"))
-        .pipe($.size({title: "dist"}))
-});
 
 
 
@@ -186,3 +157,23 @@ gulp.task("style", ()=>
         .pipe(gulp.dest(dist))
         .pipe($.size({title: "style"}))
 );
+
+
+
+//HTML
+
+gulp.task("html", ()=>{
+    site.pages.forEach(page=>{
+        if( page.title ) page.title = page.title + " - " + site.title;
+        else page.title = site.title;
+
+        page.nav = site.nav;
+
+        gulp.src("src/template.ejs")
+            .pipe($.ejs(page))
+            .pipe($.htmlmin({collapseWhitespace: true, removeComments: true}))
+            .pipe($.rename(page.fileName))
+            .pipe(gulp.dest("dist"));
+
+    });
+});

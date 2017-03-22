@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title><%=title%></title>
+        <link rel="canonical" href="<%=url%>">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="l-page">
+
+        <header class="hdr">
+            <a href="/" class="logo">
+                <i class="logo-icon"></i><div class="logo-txt">Dispossible</div>
+            </a>
+            <i class="navIcon" data-js-nav-btn>
+                <span class="navIcon-line navIcon-line1"></span>
+                <span class="navIcon-line navIcon-line2"></span>
+                <span class="navIcon-line navIcon-line3"></span>
+            </i>
+        </header>
+
+        <nav class="nav" data-js-nav>
+            <div class="nav-menu">
+                <% nav.forEach(function(pg){ %>
+                    <a href="<%=pg.url%>" class="nav-link<%=(pg.url===url)?' is-active':''%>" data-content="<%=pg.name%>"><%=pg.name%></a>
+                <% }); %>
+            </div>
+        </nav>
+
+        <main class="l-pageContent">
+            <%- include("pages/"+template, {}); %>
+        </main>
+
+        <footer class="ftr">
+            <small class="ftr-copy">&copy; Dispossible - Timothy Bailey</small>
+        </footer>
+
+        <script defer asnyc src="lib/lodash.js"></script>
+        <script defer asnyc src="lib/webfontloader.js"></script>
+        <script defer asnyc src="lib/jquery.js"></script>
+        <script defer asnyc src="script.js"></script>
+    </body>
+</html>

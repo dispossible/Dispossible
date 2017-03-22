@@ -1,0 +1,12 @@
+.hero {
+    height: 80vmin;
+    min-height: 300px;
+    max-height: 800px;
+    background: {
+        image: linear-gradient(0deg, rgba(#5d3001,0.4), rgba(#5d3001,0.4)), url('img/banner.png');
+        position: center center;
+        size: cover;
+        blend-mode: multiply;
+    }
+    padding: 32px;
+}

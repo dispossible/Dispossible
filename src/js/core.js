@@ -1,7 +1,7 @@
 //Load fonts
 WebFont.load({
     google: {
-        families: ['Open Sans']
+        families: ['Nunito']
     }
 });
 

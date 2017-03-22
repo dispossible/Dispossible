@@ -2,7 +2,7 @@
 
     const OPEN_CLASS = "is-open";
 
-    $(function(){
+    $(()=>{
         var el = $("[data-js-nav]").first();
         var btn = $("[data-js-nav-btn]").first();
         w.dsp.nav = new Nav(el, btn);
