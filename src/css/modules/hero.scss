@@ -1,12 +1,40 @@
 .hero {
     height: 80vmin;
-    min-height: 300px;
-    max-height: 800px;
+    min-height: 200px;
+    max-height: 400px;
     background: {
-        image: linear-gradient(0deg, rgba(#5d3001,0.4), rgba(#5d3001,0.4)), url('img/banner.png');
+        image: url('img/banner.png');
         position: center center;
         size: cover;
-        blend-mode: multiply;
     }
     padding: 32px;
+    margin-bottom: 32px;
+
+    &-card {
+        background: rgba(black,0.7);
+        margin: 0 auto 0 0;
+        padding: 32px;
+        color: $color-text_alt;
+        max-width: 400px;
+        text-align: center;
+        @media(min-width: 450px){
+            text-align: left;
+        }
+        h1 {
+            font-size: 2em;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid $color-text_alt;
+            @media(min-width: 450px){
+                padding-bottom: 8px;
+                margin-bottom: 8px;
+            }
+        }
+        small {
+            display: block;
+            @media(min-width: 450px){
+                text-align: right;
+            }
+        }
+    }
 }

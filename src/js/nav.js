@@ -24,9 +24,9 @@
 
 
         bindDom(){
-            this.btn.on("click",function(e){
+            this.btn.on("click",e=>{
                 this.toggle();
-            }.bind(this));
+            });
         }
 
 

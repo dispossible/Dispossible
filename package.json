@@ -1,6 +1,6 @@
 {
   "name": "dispossible",
-  "version": "0.1.339",
+  "version": "0.1.380",
   "description": "My personal website",
   "devDependencies": {
     "babel-eslint": "^7.1.1",
