@@ -9,24 +9,14 @@
     </head>
     <body class="l-page">
 
-        <header class="hdr">
-            <a href="/" class="logo">
-                <i class="logo-icon"></i><div class="logo-txt">Dispossible</div>
-            </a>
-            <i class="navIcon" data-js-nav-btn>
-                <span class="navIcon-line navIcon-line1"></span>
-                <span class="navIcon-line navIcon-line2"></span>
-                <span class="navIcon-line navIcon-line3"></span>
-            </i>
-        </header>
-
-        <nav class="nav" data-js-nav>
-            <div class="nav-menu">
+        <header class="hdr" data-js-nav>
+            <a class="hdr-title" href="#"><h1>Dispossible</h1></a>
+            <nav class="hdr-nav">
                 <% nav.forEach(function(pg){ %>
-                    <a href="<%=pg.url%>" class="nav-link<%=(pg.url===url)?' is-active':''%>" data-content="<%=pg.name%>"><%=pg.name%></a>
+                    <a href="<%=pg.url%>" class="hdr-link" data-js-nav-link><%=pg.name%></a>
                 <% }); %>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
         <main class="l-pageContent">
             <%- include("pages/"+template, {}); %>
@@ -36,9 +26,10 @@
             <small class="ftr-copy">&copy; Dispossible - Timothy Bailey</small>
         </footer>
 
-        <script defer asnyc src="lib/lodash.js"></script>
-        <script defer asnyc src="lib/webfontloader.js"></script>
-        <script defer asnyc src="lib/jquery.js"></script>
-        <script defer asnyc src="script.js"></script>
+        <div class="hdr-spacer">
+            &nbsp;
+        </div>
+        
+        <script asnyc src="script.js"></script>
     </body>
 </html>
