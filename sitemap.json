@@ -7,19 +7,5 @@
             "template": "home",
             "title": ""
         }
-    ],
-    "nav": [
-        {
-            "url": "#anchor-about",
-            "name": "About Me"
-        },
-        {
-            "url": "#anchor-work",
-            "name": "My Work"
-        },
-        {
-            "url": "#anchor-contact",
-            "name": "Contact"
-        }
     ]
 }

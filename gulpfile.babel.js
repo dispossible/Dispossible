@@ -170,8 +170,7 @@ gulp.task("style", ()=>
 gulp.task("html", ()=>{
     site.pages.forEach(page=>{
         page.title = site.title;
-        page.nav = site.nav;
-
+        
         gulp.src("src/template.ejs")
             .pipe($.ejs(page))
             .pipe($.realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(faviconData)).favicon.html_code))

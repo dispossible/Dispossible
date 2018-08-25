@@ -1,9 +1,9 @@
-(()=>{
+(function(){
 
     const STORE_KEY = "~~disp~~";
     const DATA_KEY = "JSON_";
 
-    class Website{
+    class Website {
 
         constructor(){
 

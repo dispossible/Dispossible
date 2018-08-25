@@ -9,7 +9,6 @@
   "homepage": "https://github.com/dispossible/Dispossible",
   "private": true,
   "dependencies": {
-    "smoothscroll": "^0.3.5",
     "requestAnimationFrame-Polyfill": "^2.0.1"
   }
 }
