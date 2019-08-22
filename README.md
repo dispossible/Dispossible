@@ -1,8 +1,8 @@
-#Dispossible
+# Dispossible
 My portfolio website
 
-##Pages
-*Home
-*About Me
-*My Work
-*Contact
+## Pages
+* Home
+* About Me
+* My Work
+* Contact
