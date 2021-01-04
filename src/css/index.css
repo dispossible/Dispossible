@@ -1,0 +1,150 @@
+@import "./reset.css";
+
+body {
+    background: #1B1B1D;
+    font-size: 16px;
+}
+
+.window {
+    margin: 32px;
+    background: #313235;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
+    font-family: monospace;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow:
+        0 1px 2px 0 rgba(0,0,0,.1),
+        0 2px 4px 0 rgba(0,0,0,.1),
+        0 4px 8px 0 rgba(0,0,0,.1),
+        0 8px 16px 0 rgba(0,0,0,.1),
+        0 16px 32px 0 rgba(0,0,0,.1);
+    @media(min-width: 700px){
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 600px;
+    }
+    @media(min-height: 850px){
+        margin-top: 20vh;
+    }
+    &:before {
+        content: "";
+        display: block;
+        height: 32px;
+        width: 100%;
+        background: #404144;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #77797E;
+        border-radius: 99px;
+        width: 12px;
+        height: 12px;
+        box-shadow: -20px 0 0 0 #595A5F, -40px 0 0 0 #595A5F;
+    }
+}
+
+.window-content {
+    padding: 24px;
+    overflow: auto;
+}
+
+.code {
+    &:before {
+        content: "<>";
+    }
+    &:after {
+        content: "</>";
+    }
+    &:before,
+    &:after {
+        display: block;
+        opacity: 0.3;
+        font-size: 12.8px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        @media(min-width: 500px){
+            font-size: 16px;
+            font-size: 1rem;
+        }
+    }
+    &.code_block {
+        display: block;
+        margin: 0 0 16px 16px;
+        &:before,
+        &:after {
+            margin: 4px 0 4px -16px;
+        }
+        @media(min-width: 500px){
+            margin-left: 32px;
+            &:before,
+            &:after {
+                margin-left: -32px;
+            }
+        }
+    }
+    &.code_inline,
+    &.code_inlineBlock {
+        &:not(:last-child){
+            margin-bottom: 4px;
+        }
+        &:before,
+        &:after {
+            display: inline-block;
+        }
+        &:before { margin-right: 8px; }
+        &:after { margin-left: 8px; }
+    }
+    &.code_inlineBlock {
+        display: block;
+        margin: 0 0 16px 0;
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
+}
+
+h1.code {
+    font-size: 1.5em;
+    &:before { content: "<h1>"; }
+    &:after { content: "</h1>"; }
+}
+small.code {
+    margin-bottom: 24px !important;
+    font-size: 0.8em;
+    &:before { content: "<small>"; }
+    &:after { content: "</small>"; }
+}
+ul.code {
+    margin-bottom: 24px !important;
+    &:before { content: "<ul>"; }
+    &:after { content: "</ul>"; }
+}
+li.code {
+    line-height: 1.2em;
+    &:before { content: "<li>"; }
+    &:after { content: "</li>"; }
+}
+a.code {
+    color: inherit;
+    text-decoration: none;
+    &:before { content: "<a href=\"" attr(href) "\">"; }
+    &:after { content: "</a>"; }
+}
+
+
+.pageBg {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}

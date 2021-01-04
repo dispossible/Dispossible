@@ -6,5 +6,6 @@ public/
 dist/
 _temp/
 faviconData.json
+build/
 
-package-lock\.json
+package-lock.json

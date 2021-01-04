@@ -1,36 +1,23 @@
 {
   "name": "dispossible",
-  "version": "0.1.1100",
+  "version": "10.0.0",
   "description": "My personal website",
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-preset-env": "^1.6.0",
-    "bower": "^1.8.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-bump": "^2.6.1",
-    "gulp-cache": "^0.4.5",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-ejs": "^3.0.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-js-wrapper": "0.0.3",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-real-favicon": "^0.2.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^2.4.0",
-    "gulp-uglify": "^2.0.1",
-    "main-bower-files": "^2.13.1",
-    "run-sequence": "^1.2.2"
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "autoprefixer": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "cssnano": "^4.1.10",
+    "fs-extra": "^9.0.1",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.2.2",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0",
+    "webpack": "^5.11.1"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "start": "npx browser-sync start --server \"build\" --files \"./build/*\"",
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -42,9 +29,8 @@
     "url": "https://github.com/dispossible/Dispossible/issues"
   },
   "homepage": "https://github.com/dispossible/Dispossible#readme",
-  "babel": {
-    "presets": [
-      "env"
-    ]
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "three": "^0.124.0"
   }
 }
