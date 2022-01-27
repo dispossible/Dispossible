@@ -31,6 +31,6 @@
   "homepage": "https://github.com/dispossible/Dispossible#readme",
   "dependencies": {
     "lodash": "^4.17.20",
-    "three": "^0.124.0"
+    "three": "^0.137.0"
   }
 }
