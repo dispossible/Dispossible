@@ -3,6 +3,7 @@
   "version": "10.0.0",
   "description": "My personal website",
   "devDependencies": {
+    "@11ty/eleventy-img": "^0.9.0",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "autoprefixer": "^10.1.0",
@@ -10,6 +11,8 @@
     "cssnano": "^4.1.10",
     "fs-extra": "^9.0.1",
     "html-minifier": "^4.0.0",
+    "npm-watch": "^0.10.0",
+    "nunjucks": "^3.2.3",
     "postcss": "^8.2.2",
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
@@ -17,7 +20,13 @@
   },
   "scripts": {
     "start": "npx browser-sync start --server \"build\" --files \"./build/*\"",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "build:html": "node scripts/build-html.js",
+    "build:img": "node scripts/build-img.js",
+    "build:script": "node scripts/build-script.js",
+    "build:static": "node scripts/build-static.js",
+    "build:style": "node scripts/build-style.js",
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
@@ -32,5 +41,37 @@
   "dependencies": {
     "lodash": "^4.17.20",
     "three": "^0.124.0"
+  },
+  "watch": {
+    "build:html": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html,njk"
+    },
+    "build:img": {
+      "patterns": [
+        "src/img"
+      ],
+      "extensions": "jpg,jpeg,png,tif,tiff,gif,svg"
+    },
+    "build:script": {
+      "patterns": [
+        "src/js"
+      ],
+      "extensions": "js"
+    },
+    "build:static": {
+      "patterns": [
+        "src/static"
+      ],
+      "extensions": "*"
+    },
+    "build:style": {
+      "patterns": [
+        "src/css"
+      ],
+      "extensions": "css"
+    }
   }
 }

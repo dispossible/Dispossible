@@ -1,64 +1,25 @@
 const fs = require("fs-extra");
-const minify = require('html-minifier').minify;
-const postcss = require('postcss');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
-const postcssPresetEnv = require('postcss-preset-env');
-const cssnano = require('cssnano');
-const webpack = require('webpack');
 
-const dir = "./build";
-const fileOpts = { encoding: "utf-8" };
+const { output } = require("./path");
 
 // Create build folder
-if(!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
+if(!fs.existsSync(output)){
+    fs.mkdirSync(output);
 }
-fs.emptyDirSync(dir);
+fs.emptyDirSync(output);
 
 
 // Copy static files
-fs.copySync("./src/static", dir);
-
+require("./build-static");
 
 // Minify HTML
-const html = fs.readFileSync("./src/index.html", fileOpts);
-const htmlMini =  minify(html, {
-    minifyCSS: true,
-    minifyJS: true,
-    collapseWhitespace: true,
-});
-fs.writeFileSync(`${dir}/index.html`, htmlMini, fileOpts);
-
+require("./build-html");
 
 // Build styles
-const css = fs.readFileSync("./src/css/index.css", fileOpts);
-postcss([
-    precss({}),
-    postcssPresetEnv({stage: 0}),
-    autoprefixer({}),
-    cssnano({})
-])
-.process(css, {from: "./src/css/index.css", to: `${dir}/style.css`})
-.then(result => {
-    fs.writeFileSync(`${dir}/style.css`, result.css, fileOpts);
-    if( result.map ){
-        fs.writeFileSync(`${dir}/style.css.map`, result.map, fileOpts);
-    }
-});
-
+require("./build-style");
 
 // Build scripts
-const pack = webpack(require("../webpack.config.js"));
-pack.run((err, stats) => {
-    if(err){
-        console.error(err.stack || err);
-        if(err.details){
-            console.error(err.details);
-        }
-    }
-    if(stats.hasErrors()){
-        const info = stats.toJson();
-        console.error(info.errors);
-    }
-});
+require("./build-script");
+
+//Gallery images
+require("./build-img");
